@@ -1,5 +1,5 @@
 context:
-  version: "0.4.1"
+  version: "0.4.2"
 
 package:
   name: jupyter-ai-tools
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai-tools/jupyter_ai_tools-${{ version }}.tar.gz
-  sha256: 6833101bbe6c01db420a7c54f8102b0d964624da374cb32147866287bde20b02
+  sha256: 0914b216529f23f470e8ac5383d73c3f66e1a4212bc4f9ab9bec24a9f303a799
 
 build:
   noarch: python
