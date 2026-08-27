@@ -37,49 +37,93 @@ Current release info
 Installing jupyter-ai-tools
 ===========================
 
-Installing `jupyter-ai-tools` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `jupyter-ai-tools` from the `conda-forge/label/jupyter-ai_dev` channel can be achieved by adding `conda-forge/label/jupyter-ai_dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/jupyter-ai_dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `jupyter-ai-tools` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install jupyter-ai-tools
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install jupyter-ai-tools
 ```
 
-It is possible to list all of the versions of `jupyter-ai-tools` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
 
 ```
-conda search jupyter-ai-tools --channel conda-forge
+# for adding to your local project
+pixi add jupyter-ai-tools
+# for installing globally
+pixi global install jupyter-ai-tools
 ```
 
-or with `mamba`:
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `jupyter-ai-tools` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
-mamba search jupyter-ai-tools --channel conda-forge
+conda search jupyter-ai-tools --channel conda-forge/label/jupyter-ai_dev
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With mamba</summary>
+
+```
+mamba search jupyter-ai-tools --channel conda-forge/label/jupyter-ai_dev
+```
+
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search jupyter-ai-tools --channel conda-forge/label/jupyter-ai_dev
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search jupyter-ai-tools --channel conda-forge
+mamba repoquery search jupyter-ai-tools --channel conda-forge/label/jupyter-ai_dev
 
 # List packages depending on `jupyter-ai-tools`:
-mamba repoquery whoneeds jupyter-ai-tools --channel conda-forge
+mamba repoquery whoneeds jupyter-ai-tools --channel conda-forge/label/jupyter-ai_dev
 
 # List dependencies of `jupyter-ai-tools`:
-mamba repoquery depends jupyter-ai-tools --channel conda-forge
+mamba repoquery depends jupyter-ai-tools --channel conda-forge/label/jupyter-ai_dev
 ```
+
+</details>
 
 
 About conda-forge
