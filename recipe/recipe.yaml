@@ -1,5 +1,5 @@
 context:
-  version: "0.6.1"
+  version: "0.7.0rc0"
 
 package:
   name: jupyter-ai-tools
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai-tools/jupyter_ai_tools-${{ version }}.tar.gz
-  sha256: 694319c50a231fabcab87530a79c69ed83993875ca0d89dd01fa226a282fb19d
+  sha256: 36f99e503851ad63ca86b52fb4f891c9d0bec794936a43f2aadcbbb78d579cda
 
 build:
   noarch: python
@@ -22,7 +22,13 @@ requirements:
   run:
     - python >=${{ python_min }}
     - jupyter_server >=1.6,<3
-    - jupyter_ydoc >=3.0.0
+    - jupyter_ydoc
+    # NOTE: upstream jupyter-ai-tools 0.7.0rc0 requires jupyterlab-ai-commands
+    # >=0.4.0rc0, but that pre-release is not yet on conda-forge (the feedstock
+    # rc branch is blocked on maintainer access). The specifier is dropped to
+    # unblock this RC. See the follow-up issue to rebuild once it is available.
+    - jupyterlab-ai-commands
+    - jupyterlab-commands-toolkit
     - pycrdt
 
 tests:
