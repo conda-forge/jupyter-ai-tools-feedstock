@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -23,11 +23,7 @@ requirements:
     - python >=${{ python_min }}
     - jupyter_server >=1.6,<3
     - jupyter_ydoc
-    # NOTE: upstream jupyter-ai-tools 0.7.0rc0 requires jupyterlab-ai-commands
-    # >=0.4.0rc0, but that pre-release is not yet on conda-forge (the feedstock
-    # rc branch is blocked on maintainer access). The specifier is dropped to
-    # unblock this RC. See the follow-up issue to rebuild once it is available.
-    - jupyterlab-ai-commands
+    - jupyterlab-ai-commands >=0.4.0rc0
     - jupyterlab-commands-toolkit
     - pycrdt
 
@@ -35,11 +31,7 @@ tests:
   - python:
       imports:
         - jupyter_ai_tools
-      # pip_check disabled: the 0.7.0rc0 wheel metadata requires
-      # jupyterlab-ai-commands>=0.4.0rc0, which is not yet on conda-forge, so
-      # pip check would fail against the available 0.3.1. Re-enable on rebuild
-      # once jupyterlab-ai-commands 0.4.0rc0 is available (see tracking issue).
-      pip_check: false
+      pip_check: true
     requirements:
       run:
         - python ${{ python_min }}.*
