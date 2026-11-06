@@ -1,5 +1,5 @@
 context:
-  version: "0.7.0"
+  version: "0.8.0"
 
 package:
   name: jupyter-ai-tools
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-ai-tools/jupyter_ai_tools-${{ version }}.tar.gz
-  sha256: d23c5b60722c4b68909141ab5bd792bbca3843203dd193f59c1a40c077a213b1
+  sha256: e5d5e11b9b75cad68036ce4dfb850f12b2912be964db0a042024818ac6f111b2
 
 build:
   noarch: python
@@ -24,7 +24,8 @@ requirements:
     - jupyter_server >=1.6,<3
     - jupyter_ydoc >=3.0.0
     - jupyterlab-ai-commands >=0.4.0
-    - jupyterlab-commands-toolkit
+    - jupyterlab-commands-toolkit >=0.3.1
+    - nbclient
     - pycrdt
 
 tests:
